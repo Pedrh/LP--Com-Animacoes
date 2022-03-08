@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Nunito:wght@600;700;800&display=swap');
+/* font-family: 'Lexend Deca', sans-serif; */
+/* font-family: 'Nunito', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* Construção do embrulho + flexbox*/
+.wrapper{
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto; /*Cenraliza no meio*/
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn{
+    font-family: 'Lexend Deca', sans-serif;
+    color: #ea0f78;
+    background-color: #fff;
+    padding: 10px 22px;
+    border-radius: 15px;
+    font-size: 20px;
+    display: block; /*serve para tirar ele de cima do parágrafo*/
+    width: fit-content; /*O tamanho do botão fica do tamanho da frase*/
+}
+.btn:hover{
+    opacity: 0.8;
+}
+/*estilo seção inicial*/
+#secao_inicial{
+    background: linear-gradient(45deg, #ea2181 0%, #ea0f78 160%);
+    padding: 32px 0;
+    color: #fff;
+}
+/*Menu*/
+#logo{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+#links_secoes{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+}
+#links_secoes>a {
+    padding: 10px 15px;
+}
+#links_secoes >a:hover{
+    text-decoration: underline aqua; /*sublinha a palavra quando coloca o mouse (fica com a cor aqua)*/
+    
+}
+.btn_menu{
+    font-size: 16px;
+}
+#conteudo_inicial{
+    margin-top: 64px;
+}
+/*Banner*/
+#conteudo_esq{
+    width: 40%;
+}
+#conteudo_esq>h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+}
+#conteudo_esq>p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    margin: 15px 0 32px;
+}
+#imagem_1{ /*use o Media Querie para ajudar na responsiviade*/
+    max-width: 569px; /*se clicar em "inspecionar" com o direito ou "F12" e alterar o tamanho da pág você vai ver*/
+    width: 45%;
+    min-width: 440px;
+}
+/*Estilo seção artigos (título + artigos principais + artigos em destaque)*/
+#secao_artigos{
+    background-color: #dfdfdf;
+    padding: 64px 0;
+}
+#secao_artigos > h2, #conteudo_final_textos > h2{
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #313131;
+    margin-bottom: 32px; /*Separou do título "artigos"*/
+}
+#artigos_principais{
+    width: 65%;
+}
+#artigos_principais > h3, #artigos_destaque>h3 { /*assim ele seleciona os dois (você não precisa copiar e colar lá em baixo e tals...)*/
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: #313131;
+}
+#artigos_principais>p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 18px;
+    color: #b6b6b6;
+    margin: 16px 0 32px;
+}
+#cards{
+    flex-wrap: wrap;
+}
+.card{
+    width: 48%; /*quando aumenta a largura deles, você coloca eles em colunas distantes (antes era 310px, quando era isso, eles ficavam em uma linha e o último descia só)*/
+    min-width: 310px; /*Se você comprimir a largura da tela, ele vai se apertar até um ponto e depois a coluna da direita desce*/
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 32px;
+}
+.cabecalho_card{
+    margin-bottom: 20px; /*separa o título e o coração do txtinho*/   
+}
+.cabecalho_card>p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    color: #b6b6b6;
+}
+.cabecalho_card > i{
+    color: #ea2181;
+    font-size: 25px;
+}
+.conteudo_card >h4, .card_destaque>h4{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ea2181;
+    margin-bottom: 5px;
+}
+.conteudo_card>p, #conteudo_final_textos > p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 18px;
+    color: #b6b6b6;
+    line-height: 25px; /*Aumenta a distância entre um linha e outra*/
+}
+#artigos_destaque{
+    width: 33%;
+}
+#cards_destaque{
+    margin-top: 20px;
+}
+.card_destaque{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 16px;
+}
+#secao_artigos > div{
+    align-items: flex-start;
+}
+/*hover coração*/
+.cabecalho_card>i:hover::before { /*quando passa o mouse em cima do i, a gente altera o before dele para deixar o coração preenchido*/
+    font-family: "Font Awesome 5 free"; /*Não tem como preencher uma fonte (já que é letra ne). Então você tansforma ele em outro ícone*/
+    content: "\f00c"; /*Esse código tem no font awesome. Quando clica num ícone, no canto superior direito ele aparece*/
+    font-weight: 900;
+    cursor: pointer; /*deixa o mouse com aquela maozinha quando está em cima. mas não tem nada para clicar*/
+}
+/*estlio secao artigos + rodapé*/
+/*seção final*/
+#secao_final{
+    padding: 64px 0;
+    background-color: #eceef0;
+}
+#conteudo_final_textos{
+    width: 45%;
+}
+#conteudo_final_textos > h2{
+    text-align: left;
+}
+.btn_final{
+    background-color: #ea2181;
+    color: #fff;
+    margin: 32px auto 0; /*Centralizando o botão*/
+}
+#imagem_2{
+    max-width: 552px;
+    width: 40%;
+    min-width: 430px;
+}
+/*rodapé*/
+footer{
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #ea2181;
+    background-color: #fff;
+}
+/*Começo estilo responsividade*/
+/*1º width - 1100px (esse é o primeiro breakpoint, onde o nosso site quebra, e as coisas começam a se apertar e se encostar)*/ /*Isso tudo é feito no intuito de que o site seja bom para qualquer tamanho munitor assim como para celular */
+@media screen and (max-width: 1100px) { /*altere o tamanho da página atraves da inspeção e veja o que acontece quando diminuia largura até 1100px...*/ /*O max widt serve para dizer que desse número para baixo tais regras são aplicadas (se fosse min, seria desse número para cima)*/
+    #conteudo_esq{
+        font-size: 48px;
+    }
+    .btn{
+        font-size: 18px;
+    }
+    .card{
+        width: 100%;
+    }
+    #conteudo_final_textos > p{
+        font-size: 16px;
+    }
+    #conteudo_final_textos > h2{
+        font-size: 25px;
+    }
+}
+/*2° width- 920px*/
+@media screen and (max-width:920) { /*coloca esse como se a pessoa continuasse diminuindo o site*/
+    #conteudo_esq > h1{
+        font-size: 40px;
+    }
+    .btn, .btn_menu{
+        font-size: 16px;
+    }
+    #secao_artigos > h2{
+        font-size: 25px;
+    }
+    #artigos_principais > h3, #artigos_destaque>h3 {
+        font-size: 20px;
+    }
+    .conteudo_card>p{
+        font-size: 16px;
+    }
+    .conteudo_card >h4, .card_destaque>h4{
+        font-size: 18px;
+    }
+}
+/*3° width- 820px*/
+@media screen and (max-width:820px) { /*editando banner*/
+    #imagem_1{
+        display: none; /*ela não vai mais aparecer na tela*/
+    }
+    #conteudo_esq{ 
+        width: 65%;
+        text-align: center;
+    }
+    #conteudo_inicial >div{
+        justify-content: center;
+    }
+    #conteudo_esq > .btn{
+        margin: auto;
+    }
+    #conteudo_esq > h1{
+        font-size: 48px;
+    }
+    /*começando seção artigos*/
+    #secao_artigos > div{
+        flex-direction: column-reverse;
+    }
+    #artigos_principais, #artigos_destaque{
+        width: 100%;
+    }
+    #artigos_destaque{
+        margin-bottom: 64px;
+    }
+    .card{
+        min-width: 100%;
+    }
+    /*Seção final*/
+    #conteudo_final{
+        flex-direction: column;
+    }
+    #conteudo_final_textos{
+        width: 80%;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    #conteudo_final_textos >h2{
+        text-align: inherit;
+        margin-bottom: 16px;
+    }
+    #imagem_2{
+        width: 60%;
+        min-width: 200px;
+    }
+}
+/* 4° brakingpoint */
+@media screen and (max-width: 600px) {
+    #links_secoes{
+        display: none;
+    }
+    #conteudo_esq > h1{
+        font-size: 42px;
+        margin-bottom: 32px;
+    }
+    #conteudo_esq > p{
+        display: none;
+    }
+    #conteudo_esq{
+        width: 100%;
+    }
+}
